@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engagement Invitation</title>
+  <meta name="description" content="You're invited to the engagement of Deeparuban & Sakthi. Join us for love, blessings, and celebrations!">
+  <meta property="og:title" content="Deeparuban & Sakthi | Engagement Invitation">
+  <meta property="og:description" content="Join us on Thursday, 4th September 2025 at Madurai Meenakshi Mahal, Madurai.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .script-font { font-family: 'Great Vibes', cursive; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.85); }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+  <div class="max-w-2xl glass rounded-2xl shadow-2xl p-8 text-center">
+    <h1 class="script-font text-5xl text-rose-600 mb-3">Engagement Invitation</h1>
+    <p class="text-gray-700 mb-2">With joyful hearts, we invite you to celebrate the engagement of</p>
+
+    <h2 class="script-font text-6xl text-gray-900 mb-4">Deeparuban & Sakthi</h2>
+
+    <p class="text-gray-700 text-lg mb-1">on <span class="font-semibold">Thursday, 4th September 2025</span></p>
+    <p class="text-gray-700 text-lg mb-4">Time: <span class="font-semibold">06:30 PM</span></p>
+    <p class="text-gray-700 text-lg">Venue: <span class="font-semibold">Madurai Meenakshi Mahal, Madurai</span></p>
+
+    <div class="border-t border-gray-300 my-6"></div>
+
+    <!-- Countdown -->
+    <div id="countdown" class="flex justify-center gap-4 mb-6 text-gray-800">
+      <div class="rounded-xl border px-4 py-2"><div class="text-2xl font-bold" id="cd-days">--</div><div class="text-xs">Days</div></div>
+      <div class="rounded-xl border px-4 py-2"><div class="text-2xl font-bold" id="cd-hours">--</div><div class="text-xs">Hours</div></div>
+      <div class="rounded-xl border px-4 py-2"><div class="text-2xl font-bold" id="cd-mins">--</div><div class="text-xs">Mins</div></div>
+      <div class="rounded-xl border px-4 py-2"><div class="text-2xl font-bold" id="cd-secs">--</div><div class="text-xs">Secs</div></div>
+    </div>
+
+    <p class="text-gray-600 text-base mb-6">Join us for a day filled with love, laughter, and blessings.</p>
+
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <a href="https://www.google.com/maps/place/Madurai+Meenakshi+Mahal/@9.917582,78.1129012,19.46z/data=!4m6!3m5!1s0x3b00c580b7c78c83:0x60aef50228647e67!8m2!3d9.917629!4d78.112166!16s%2Fg%2F11bv18s_c8?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-block bg-rose-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-rose-700 transition-transform transform hover:scale-105">View Location</a>
+    </div>
+
+    <div class="mt-8 text-sm text-gray-500 italic">#DeeparubanAndSakthiEngagement</div>
+  </div>
+
+  <script>
+    // Countdown (IST)
+    (function(){
+      const eventTime = new Date('2025-09-04T18:30:00+05:30').getTime();
+      const ids = {d:'cd-days', h:'cd-hours', m:'cd-mins', s:'cd-secs'};
+      const fmt = v => String(v).padStart(2,'0');
+      const tick = () => {
+        const now = Date.now();
+        let diff = Math.max(0, eventTime - now);
+        const d = Math.floor(diff / (1000*60*60*24)); diff -= d*(1000*60*60*24);
+        const h = Math.floor(diff / (1000*60*60)); diff -= h*(1000*60*60);
+        const m = Math.floor(diff / (1000*60)); diff -= m*(1000*60);
+        const s = Math.floor(diff / 1000);
+        document.getElementById(ids.d).textContent = d;
+        document.getElementById(ids.h).textContent = fmt(h);
+        document.getElementById(ids.m).textContent = fmt(m);
+        document.getElementById(ids.s).textContent = fmt(s);
+      };
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+</html>
